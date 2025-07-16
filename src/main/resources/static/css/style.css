@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Effet de particules animées en arrière-plan */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+        radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+        radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        radial-gradient(circle at 60% 80%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 100px 100px, 150px 150px, 200px 200px, 120px 120px;
+    animation: float 20s infinite linear;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+/* Effet shimmer */
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    animation: shimmer 3s infinite;
+    pointer-events: none;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+form {
+    position: relative;
+    width: 420px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    z-index: 10;
+    animation: fadeInUp 0.8s ease-out;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dialog-row {
+    margin-bottom: 20px;
+}
+
+.redText {
+    color: #ff4757;
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.inputbox {
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.inputbox ion-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    z-index: 10;
+    transition: color 0.3s ease;
+}
+
+.inputbox input {
+    width: 100%;
+    height: 55px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    padding: 15px 45px 15px 15px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.inputbox input:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.inputbox input:focus + label,
+.inputbox input:valid + label {
+    top: -8px;
+    left: 15px;
+    font-size: 0.8rem;
+    color: #fff;
+    background: rgba(102, 126, 234, 0.8);
+    padding: 2px 8px;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+}
+
+.inputbox input:focus ~ ion-icon {
+    color: #fff;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.inputbox input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.register {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.register p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+.register a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-left: 5px;
+}
+
+.register a:hover {
+    color: #ff6b6b;
+    text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+}
+
+button {
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+    background: linear-gradient(45deg, #ff5252, #ff3838);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Styles spécifiques pour les formulaires plus longs (signup) */
+form:has(.inputbox:nth-child(5)) {
+    width: 450px;
+}
+
+form:has(.inputbox:nth-child(5)) .inputbox {
+    margin-bottom: 20px;
+}
+
+form:has(.inputbox:nth-child(5)) h1 {
+    margin-bottom: 25px;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    form {
+        width: 90%;
+        padding: 30px 20px;
+        margin: 20px;
+    }
+
+    form:has(.inputbox:nth-child(5)) {
+        width: 90%;
+    }
+
+    form h1 {
+        font-size: 2rem;
+    }
+
+    .inputbox input {
+        height: 50px;
+        padding: 12px 40px 12px 12px;
+    }
+
+    button {
+        height: 45px;
+        font-size: 1rem;
+    }
+
+    .inputbox {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 350px) {
+    form {
+        padding: 25px 15px;
+    }
+
+    form h1 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .inputbox input {
+        height: 45px;
+        font-size: 0.9rem;
+    }
+
+    button {
+        height: 40px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Animation pour les erreurs de validation */
+.inputbox.error input {
+    border-color: #ff4757;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+/* Effet de focus amélioré */
+.inputbox input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow:
+        0 0 0 3px rgba(255, 255, 255, 0.1),
+        0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Amélioration des transitions */
+.inputbox input,
+.inputbox label,
+.inputbox ion-icon {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Personnalisation de la scrollbar pour les formulaires longs */
+form::-webkit-scrollbar {
+    width: 6px;
+}
+
+form::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+form::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+form::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
