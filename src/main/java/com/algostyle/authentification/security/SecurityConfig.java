@@ -67,6 +67,13 @@ public class SecurityConfig {
                     registry.requestMatchers("/req/**","/css/**","/js/**").permitAll(); // URLs publiques
                     registry.anyRequest().authenticated();  // Toutes autres URLs nécessitent une authentification
                 })
+
+                .logout(logout-> logout.logoutUrl("/logout")
+                        .logoutSuccessUrl("/login?logout")
+                        .invalidateHttpSession(true)
+                        .deleteCookies("JSESSIONID")
+                        .permitAll()
+                )
                 .build();
     }
 

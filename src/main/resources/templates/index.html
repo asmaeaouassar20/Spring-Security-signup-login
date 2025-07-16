@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,6 +49,19 @@
             bottom: 0;
             width: 100%;
         }
+        button {
+              background-color: #3498db;
+              color: white;
+              border: none;
+              padding: 12px 20px;
+              border-radius: 5px;
+              cursor: pointer;
+              font-size: 16px;
+              transition: background-color 0.3s;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+            }
     </style>
 </head>
 <body>
@@ -63,6 +76,13 @@
         <p>This is a paragraph about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque nisl ut sapien interdum, nec ullamcorper velit dapibus. Sed ac vestibulum libero, nec tempor felis.</p>
         <h2>Services</h2>
         <p>Visit my Youtube channel <a href="https://www.youtube.com/channel/UC0haKlTiI-GxZ3XrLNMFjOw">Click here</a></p>
+        <br>
+        <hr>
+        <form th:action="@{/logout}" method="post" style="display: inline;">
+            <button type="submit" class="btn btn-danger">
+                Déconnexion
+            </button>
+        </form>
     </main>
     <footer>
         <p>Footer Content &copy; 2024</p>
