@@ -1,0 +1,169 @@
+/* styleUpdate.css - Style commun pour les pages Profile et Update Profile */
+
+/* Reset et styles de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+section {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+/* Styles pour la page Profile */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.info-item label {
+  font-weight: bold;
+  min-width: 120px;
+  color: #555;
+}
+
+.info-item span {
+  flex-grow: 1;
+}
+
+/* Styles pour la page Update Profile */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputbox {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.inputbox ion-icon {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  color: #555;
+}
+
+.inputbox input {
+  width: 100%;
+  padding: 12px 15px 12px 35px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.inputbox input:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.inputbox label {
+  position: absolute;
+  top: 12px;
+  left: 35px;
+  color: #777;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+.inputbox input:focus + label,
+.inputbox input:valid + label {
+  top: -10px;
+  left: 10px;
+  font-size: 12px;
+  background: white;
+  padding: 0 5px;
+  color: #3498db;
+}
+
+/* Styles communs pour les boutons et liens */
+.btn, button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover, button:hover {
+  background-color: #2980b9;
+}
+
+.profile-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.register a:hover {
+  text-decoration: underline;
+}
+
+/* Messages */
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}

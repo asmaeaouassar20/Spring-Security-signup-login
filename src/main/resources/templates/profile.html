@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>My Profile</title>
+  <link rel="stylesheet" href="/css/styleUpdate.css">
+</head>
+<body>
+<section>
+  <div class="profile-container">
+    <h1>My Profile</h1>
+
+    <div class="profile-info">
+      <div class="info-item">
+        <label>Username:</label>
+        <span th:text="${user.username}"></span>
+      </div>
+
+      <div class="info-item">
+        <label>Prenom:</label>
+        <span th:text="${user.prenom}"></span>
+      </div>
+
+      <div class="info-item">
+        <label>nom:</label>
+        <span th:text="${user.nom}"></span>
+      </div>
+
+      <div class="info-item">
+        <label>Email:</label>
+        <span th:text="${user.email}"></span>
+      </div>
+
+
+    <div class="profile-actions">
+      <a th:href="@{/profile/update}" class="btn">Edit Profile</a>
+    </div>
+  </div>
+</section>
+</body>
+</html>

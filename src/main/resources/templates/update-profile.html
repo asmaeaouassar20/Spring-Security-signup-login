@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Update Profile</title>
+
+  <link rel="stylesheet" href="/css/styleUpdate.css">
+</head>
+<body>
+<section>
+  <form th:action="@{/profile/update}" method="post" th:object="${user}">
+    <h1>Update Profile</h1>
+
+    <!-- Message de succès/erreur -->
+    <div th:if="${success}" class="success-message">
+      <p th:text="${success}"></p>
+    </div>
+    <div th:if="${error}" class="error-message">
+      <p th:text="${error}"></p>
+    </div>
+
+    <div class="inputbox">
+      <ion-icon name="person-outline"></ion-icon>
+      <input type="text" th:field="*{prenom}" required>
+      <label>Prenom</label>
+    </div>
+
+    <div class="inputbox">
+      <ion-icon name="person-outline"></ion-icon>
+      <input type="text" th:field="*{nom}" required>
+      <label>Nom</label>
+    </div>
+
+    <div class="inputbox">
+      <ion-icon name="mail-outline"></ion-icon>
+      <input type="email" th:field="*{email}" required>
+      <label>Email</label>
+    </div>
+
+
+    <button type="submit">Update Profile</button>
+
+    <div class="register">
+      <p><a th:href="@{/profile}">Back to Profile</a></p>
+    </div>
+  </form>
+</section>
+</body>
+</html>
