@@ -41,11 +41,3 @@ La page de profil de **l'utilisateur connecté** est accessible à l'adresse :  
 Si l'utilisateur clique sur le bouton de déconnexion, il sera redirigé vers la page de **login**
 
 
-
-<br><br><br><br><br><br>
-
-### En utilisant Postman
-
-Lorsqu'on veut accéder à n'import quel URL , on obtient une page HTML de login
-<img width="1863" height="82" alt="image" src="https://github.com/user-attachments/assets/a9f98e7f-5cbd-4f8f-9f9c-5f8d3ff9744a" />
-
